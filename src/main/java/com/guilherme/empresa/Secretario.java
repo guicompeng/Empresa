@@ -4,7 +4,7 @@ package com.guilherme.empresa;
  *
  * @author guilherme
  */
-public class Secretario extends Funcionario implements Cargo {
+public class Secretario extends FuncionarioBeneficio implements Cargo {
 
     public static final double SALARIO_BASE = 7000;
     public static final double ADICIONAL_ANO_BASE = 1000;
@@ -16,6 +16,8 @@ public class Secretario extends Funcionario implements Cargo {
 
     @Override
     public double getSalario(int mes, int ano) {
+        if(ano < this.getAnoContratacao() || (ano == this.getAnoContratacao() && mes < this.getMesContratacao()))
+            return 0;
         double salario = SALARIO_BASE + (ADICIONAL_ANO_BASE * this.getAnosDeEmpresa(mes, ano));
         return salario;
     }

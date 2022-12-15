@@ -22,9 +22,11 @@ public abstract class Funcionario {
 
     public int getAnosDeEmpresa(int mes, int ano) {
         int anosDeEmpresa = ano - anoContratacao;
-        if(mes < mesContratacao)
+        if (mes < mesContratacao) {
             anosDeEmpresa = anosDeEmpresa - 1;
-        return anosDeEmpresa;
+        }
+        return anosDeEmpresa < 0 ? 0 : anosDeEmpresa;
+
     }
 
     public String getNome() {

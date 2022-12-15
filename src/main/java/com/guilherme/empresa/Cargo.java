@@ -7,5 +7,4 @@ package com.guilherme.empresa;
 public interface Cargo {
     public double getSalarioBase();
     public double getAdicionalAnoBase();
-    public double getBeneficioBase();
 }

@@ -16,13 +16,13 @@ public class Empresa {
         this.funcionarios = new ArrayList<>();
     }
 
-    public void gerarRelatorio() {
-        // filtrar funcionarios que apenas que recebem beneficios ou vendedores
-        ArrayList<Funcionario> funcionariosComBeneficios = new ArrayList<>();
+    public void gerarRelatorios() {
+        // filtrar funcionarios que apenas recebem beneficios ou vendedores
+        ArrayList<FuncionarioBeneficio> funcionariosComBeneficios = new ArrayList<>();
         ArrayList<Vendedor> vendedores = new ArrayList<>();
         for (Funcionario f : funcionarios) {
-            if (f instanceof Vendedor || f instanceof Secretario) {
-                funcionariosComBeneficios.add(f);
+            if (f instanceof FuncionarioBeneficio) {
+                funcionariosComBeneficios.add((FuncionarioBeneficio) f);
             }
             if (f instanceof Vendedor) {
                 vendedores.add((Vendedor) f);

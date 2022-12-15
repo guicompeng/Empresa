@@ -41,6 +41,6 @@ public class Teste {
         empresa.setFuncionario(f6);
 
         // Gerar relatorio da empresa
-        empresa.gerarRelatorio();
+        empresa.gerarRelatorios();
     }
 }
