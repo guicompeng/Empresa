@@ -20,7 +20,10 @@ public class Relatorio {
     public static double totalPagoComBeneficios(ArrayList<Funcionario> funcionarios, int mes, int ano) {
         double total = 0;
         for (Funcionario f : funcionarios) {
-            total += f.getSalario(mes, ano) + f.getBeneficio(mes, ano);
+            total += f.getSalario(mes, ano);
+            if(f instanceof FuncionarioBeneficio) {
+                total += ((FuncionarioBeneficio) f).getBeneficio(mes, ano);
+            }
         }
         return total;
     }
@@ -53,7 +56,7 @@ public class Relatorio {
      */
     public static double totalBeneficios(ArrayList<FuncionarioBeneficio> funcionarios, int mes, int ano) {
         double total = 0;
-        for (Funcionario f : funcionarios) {
+        for (FuncionarioBeneficio f : funcionarios) {
             total += f.getBeneficio(mes, ano);
         }
         return total;
@@ -89,8 +92,8 @@ public class Relatorio {
      * @return Funcionario - objeto funcionario que mais recebeu no mes
      */
     public static String funcionarioQueMaisRecebeuBeneficio(ArrayList<FuncionarioBeneficio> funcionarios, int mes, int ano) {
-        Funcionario fMaior = funcionarios.get(0);
-        for (Funcionario f : funcionarios) {
+        FuncionarioBeneficio fMaior = funcionarios.get(0);
+        for (FuncionarioBeneficio f : funcionarios) {
             if (f.getBeneficio(mes, ano) > fMaior.getBeneficio(mes, ano)) {
                 fMaior = f;
             }

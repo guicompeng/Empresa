@@ -10,6 +10,8 @@ public abstract class FuncionarioBeneficio extends Funcionario {
         super(nome, mesContratacao, anoContratacao);
     }
 
+    public abstract double getBeneficio(int mes, int ano);
+
     public abstract double getBeneficioBase();
 
 }

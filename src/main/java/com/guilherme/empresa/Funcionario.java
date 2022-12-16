@@ -18,8 +18,6 @@ public abstract class Funcionario {
 
     public abstract double getSalario(int mes, int ano);
 
-    public abstract double getBeneficio(int mes, int ano);
-
     public int getAnosDeEmpresa(int mes, int ano) {
         int anosDeEmpresa = ano - anoContratacao;
         if (mes < mesContratacao) {
